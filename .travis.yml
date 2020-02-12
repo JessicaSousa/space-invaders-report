@@ -2,10 +2,8 @@ language: r
 cache: packages
 pandoc_version: 1.19.2.1
 
-addons:
-  apt:
-    packages:
-      - texlive-lang-portuguese
+before_install:
+  - sudo apt-get -y install texlive-lang-portuguese
 
 before_script:
   - chmod +x ./_build.sh

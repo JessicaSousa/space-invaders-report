@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581463567728.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3908019811",
+    "id" : "B61DB009",
+    "lastKnownWriteTime" : 1581463653,
+    "last_content_update" : 1581463653753,
+    "path" : "~/GitHub/space-invaders-report/_build.sh",
+    "project_path" : "_build.sh",
+    "properties" : {
+        "cursorPosition" : "4,8",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "sh"
+}

@@ -15,3 +15,12 @@ As depedências do python devem ter sido satisfeitas. O programa com UI vai prec
 gcc -Wall -fPIC -shared src/Space.c src/list.c src/genann.c -o src/Space.so
 
 Se tudo tiver dado certo, o jogo deve funcionar. Basta utilizar python menu.py
+
+
+## Jogo
+
+O Jogo Space invader foi desenvolvido em C de modo a ser o mais eficiente possível. Além disso, foram utilizadas estruturas de dados com menor complexidade, como por exemplo:
+1. o uso de Matriz para representar o espaço do jogo, tendo O(1) para checar se a nave do jogador ou dos oponentes receberam dados dos tiros.
+2. O(n) para mover os tiros, onde n é a quantidade de tiros ativos na tela, armazenados em uma lista. Tiros fora da tela são descartados
+Um foward simulator foi implementado para permitir que os agentes possam fazer simulações, para planning e treinamento.
+Os comandos para jogar são os seguintes: direcionais movem a nave, e espaço atira.

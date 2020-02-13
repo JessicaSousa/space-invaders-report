@@ -2,7 +2,7 @@
 
 ## Instalaçao
 
-git clone no repositório: 
+git clone no repositório: https://github.com/abcp4/SpaceInvaders.git
 
 
 Para instalar no Windows é necessário um compilador de c(gcc foi utilizado no desenvolvimento), e de python 3.6 de 32 bits. Utilizando o anaconda basta criar um ambiente como se segue:
@@ -24,7 +24,7 @@ Se tudo tiver dado certo, o jogo deve funcionar. Basta utilizar python menu.py
 
 ## Jogo
 
-O Jogo Space invader foi desenvolvido em C de modo a ser o mais eficiente possível. Além disso, foram utilizadas estruturas de dados com menor complexidade, como por exemplo:
+O Jogo Space invaders foi desenvolvido em C de modo a ser o mais eficiente possível. Além disso, foram utilizadas estruturas de dados com menor complexidade, como por exemplo:
 
 1. o uso de Matriz para representar o espaço do jogo, tendo O(1) para checar se a nave do jogador ou dos oponentes receberam dados dos tiros.
 

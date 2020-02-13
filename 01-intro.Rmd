@@ -23,7 +23,7 @@ Para que as técnicas de IA sejam viáveis, é necessário a interação com um 
 Com este propósito, as técnicas de planning são uma forma de se construir esse surrogate, já que diferente de modelos black box, elas são intuitivas e entendíveis, permitindo o debug e aprimoramento dos modelos.
 Nesse projeto foi utilizada a máquina de estados finito(FSM) para modelar o comportamento do jogador humano. O diagrama abaixo demonstra o funcionamento da FSM:
 
-```{r fsm, fig.align="center", echo=FALSE,  out.width = '50%', fig.cap = "Processo de decisão de markov. [@faria1999explorando]"}
+```{r fsm, fig.align="center", echo=FALSE,  out.width = '50%', fig.cap = "Diagrama FSM"}
 knitr::include_graphics('content/imgs/FSM.png')
 ```
 

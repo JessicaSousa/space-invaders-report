@@ -14,7 +14,7 @@ knitr::include_graphics('content/imgs/MC.png')
 Por causa do enorme número de ações, esse método se torna menos eficiente. Melhorias possíveis são a utilização de métodos que selecionam subconjuntos de ações disponíveis. 
 
 ## Monte Carlo Tree Search
-O método de melhor resultado, é uma melhoria do MC onde se constroi uma árvore de ações na memória. Seu funcionamento se dá pelos 4 passos ilustrados na figura abaixo:
+O MCTS [@browne2012survey] é o método de melhor resultado, é uma melhoria do MC onde se constroi uma árvore de ações na memória. Seu funcionamento se dá pelos 4 passos ilustrados na figura abaixo:
 
 ```{r fig.align="center", echo=FALSE,  out.width = '50%'}
 knitr::include_graphics('content/imgs/MCTS.png')
@@ -25,5 +25,5 @@ Expansion: Dentre os nós filhos do ultimo nó da seleção, escolhemos um para 
 Playout: O jogo continua de modo aleatório até o fim da partida
 Backpropagation: As recompensas são adicionadas aos nós da memória percorridos nessa iteração. 
 
-A MCTS vai acabar convergindo na arvore de busca MinMax, que encontra a melhor decisão considerando o as melhores decisões que o oponente pode tomar(Equilibrio Nash). Mas é importante frisar que as ações do jogador vem de um surrogate, o que diminui a validade téorica do algoritmo.
+A MCTS vai acabar convergindo na arvore de busca MinMax, que encontra a melhor decisão considerando o as melhores decisões que o oponente pode tomar(Equilíbrio Nash). No entanto, é importante frisar que as ações do jogador vem de um surrogate, o que diminui a validade téorica do algoritmo.
 

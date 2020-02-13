@@ -111,6 +111,7 @@
 <div id="monte-carlo-1-step-planning" class="section level2">
 <h2><span class="header-section-number">2.2</span> Monte Carlo 1-Step Planning</h2>
 <p>Utiliza-se simulação monte carlo para se estimar o retorno esperado de cada ação possível no estado atual. Rollouts/playouts/partidas aleatórias são simuladas até certo passo estipulado. A recompensa acumulada até aquele passo é utilizada como estimativa do retorno esperado. Quanto mais simulações melhor, logo é importante a velocidade do simulador. O funcionamento é ilustrado na figura abaixo:</p>
+<p><img src="content/imgs/MC.png" width="50%" style="display: block; margin: auto;" /></p>
 <p>Por causa do enorme número de ações, esse método se torna menos eficiente. Melhorias possíveis são a utilização de métodos que selecionam subconjuntos de ações disponíveis. ## Monte Carlo Tree Search</p>
 </div>
 <div id="reinforcement-learning" class="section level2">

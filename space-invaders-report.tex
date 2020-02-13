@@ -158,7 +158,19 @@ We describe our methods in this chapter.
 
 \section{Neural Network}\label{neural-network}
 
-\section{Monte Carlo Tree Search}\label{monte-carlo-tree-search}
+\section{Monte Carlo 1-Step Planning}\label{monte-carlo-1-step-planning}
+
+Utiliza-se simulação monte carlo para se estimar o retorno esperado de
+cada ação possível no estado atual. Rollouts/playouts/partidas
+aleatórias são simuladas até certo passo estipulado. A recompensa
+acumulada até aquele passo é utilizada como estimativa do retorno
+esperado. Quanto mais simulações melhor, logo é importante a velocidade
+do simulador. O funcionamento é ilustrado na figura abaixo:
+
+Por causa do enorme número de ações, esse método se torna menos
+eficiente. Melhorias possíveis são a utilização de métodos que
+selecionam subconjuntos de ações disponíveis. \#\# Monte Carlo Tree
+Search
 
 \section{Reinforcement Learning}\label{reinforcement-learning}
 

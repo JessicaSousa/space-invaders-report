@@ -73,7 +73,7 @@
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
 <li class="chapter" data-level="2" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>2</b> Metodologia</a><ul>
 <li class="chapter" data-level="2.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>2.1</b> Neural Network</a></li>
-<li class="chapter" data-level="2.2" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>2.2</b> Monte Carlo Tree Search</a></li>
+<li class="chapter" data-level="2.2" data-path="methods.html"><a href="methods.html#monte-carlo-1-step-planning"><i class="fa fa-check"></i><b>2.2</b> Monte Carlo 1-Step Planning</a></li>
 <li class="chapter" data-level="2.3" data-path="methods.html"><a href="methods.html#reinforcement-learning"><i class="fa fa-check"></i><b>2.3</b> Reinforcement Learning</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>3</b> Aplicação</a><ul>
@@ -108,8 +108,10 @@
 <div id="neural-network" class="section level2">
 <h2><span class="header-section-number">2.1</span> Neural Network</h2>
 </div>
-<div id="monte-carlo-tree-search" class="section level2">
-<h2><span class="header-section-number">2.2</span> Monte Carlo Tree Search</h2>
+<div id="monte-carlo-1-step-planning" class="section level2">
+<h2><span class="header-section-number">2.2</span> Monte Carlo 1-Step Planning</h2>
+<p>Utiliza-se simulação monte carlo para se estimar o retorno esperado de cada ação possível no estado atual. Rollouts/playouts/partidas aleatórias são simuladas até certo passo estipulado. A recompensa acumulada até aquele passo é utilizada como estimativa do retorno esperado. Quanto mais simulações melhor, logo é importante a velocidade do simulador. O funcionamento é ilustrado na figura abaixo:</p>
+<p>Por causa do enorme número de ações, esse método se torna menos eficiente. Melhorias possíveis são a utilização de métodos que selecionam subconjuntos de ações disponíveis. ## Monte Carlo Tree Search</p>
 </div>
 <div id="reinforcement-learning" class="section level2">
 <h2><span class="header-section-number">2.3</span> Reinforcement Learning</h2>

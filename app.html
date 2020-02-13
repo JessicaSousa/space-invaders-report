@@ -108,15 +108,25 @@
 <h1><span class="header-section-number">Capítulo 5</span> Aplicação</h1>
 <div id="instalaçao" class="section level2">
 <h2><span class="header-section-number">5.1</span> Instalaçao</h2>
-<p>Para instalar no Windows é necessário um compilador de c(gcc foi utilizado no desenvolvimento), e de python 3.6 de 32 bits. Utilizando o anaconda basta criar um ambiente como se segue: Colocar variável de ambiente: set CONDA_FORCE_32BIT=1<br />
-Criar ambiente: conda create -n py36_32 python=3.6 Ativar ambiente: conda activate py36_32 Instalar numpy e pygame: pip install numpy,pygame</p>
+<p>git clone no repositório:</p>
+<p>Para instalar no Windows é necessário um compilador de c(gcc foi utilizado no desenvolvimento), e de python 3.6 de 32 bits. Utilizando o anaconda basta criar um ambiente como se segue:</p>
+<p>Colocar variável de ambiente: set CONDA_FORCE_32BIT=1</p>
+<p>Criar ambiente: conda create -n py36_32 python=3.6</p>
+<p>Ativar ambiente: conda activate py36_32</p>
+<p>Instalar numpy e pygame: pip install numpy,pygame</p>
 <p>As depedências do python devem ter sido satisfeitas. O programa com UI vai precisar chamar o jogo SpaceInvaders em C, para que possa funcionar. Temos que compilar o código em C com o comando a seguir, da pasta SpaceInvaders</p>
 <p>gcc -Wall -fPIC -shared src/Space.c src/list.c src/genann.c -o src/Space.so</p>
 <p>Se tudo tiver dado certo, o jogo deve funcionar. Basta utilizar python menu.py</p>
 </div>
 <div id="jogo" class="section level2">
 <h2><span class="header-section-number">5.2</span> Jogo</h2>
-<p>O Jogo Space invader foi desenvolvido em C de modo a ser o mais eficiente possível. Além disso, foram utilizadas estruturas de dados com menor complexidade, como por exemplo: 1. o uso de Matriz para representar o espaço do jogo, tendo O(1) para checar se a nave do jogador ou dos oponentes receberam dados dos tiros. 2. O(n) para mover os tiros, onde n é a quantidade de tiros ativos na tela, armazenados em uma lista. Tiros fora da tela são descartados Um foward simulator foi implementado para permitir que os agentes possam fazer simulações, para planning e treinamento. Os comandos para jogar são os seguintes: direcionais movem a nave, e espaço atira.</p>
+<p>O Jogo Space invader foi desenvolvido em C de modo a ser o mais eficiente possível. Além disso, foram utilizadas estruturas de dados com menor complexidade, como por exemplo:</p>
+<ol style="list-style-type: decimal">
+<li><p>o uso de Matriz para representar o espaço do jogo, tendo O(1) para checar se a nave do jogador ou dos oponentes receberam dados dos tiros.</p></li>
+<li><p>O(n) para mover os tiros, onde n é a quantidade de tiros ativos na tela, armazenados em uma lista. Tiros fora da tela são descartados</p></li>
+</ol>
+<p>Um foward simulator foi implementado para permitir que os agentes possam fazer simulações, para planning e treinamento.</p>
+<p>Os comandos para jogar são os seguintes: direcionais movem a nave, e espaço atira.</p>
 O Vídeo abaixo demonstra uma partida rapida de um humano contra a IA MCTS
 <center>
 <video width="320" height="240" controls>

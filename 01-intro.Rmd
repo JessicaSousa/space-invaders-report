@@ -15,4 +15,4 @@ Os objetivos deste trabalho são listados a seguir:
 4. Implementação de Técnicas de IA (Planning e Aprendizado)
 
 
-No capítulo \@ref(methods) descrevemos as técnicas utilizadas neste trabalho...
+No capítulo \@ref(methods) descrevemos as técnicas utilizadas neste trabalho, e no capítulo \@ref(app) descrevemos a implementação como um todo.

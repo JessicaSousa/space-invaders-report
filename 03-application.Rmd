@@ -24,3 +24,9 @@ O Jogo Space invader foi desenvolvido em C de modo a ser o mais eficiente possí
 2. O(n) para mover os tiros, onde n é a quantidade de tiros ativos na tela, armazenados em uma lista. Tiros fora da tela são descartados
 Um foward simulator foi implementado para permitir que os agentes possam fazer simulações, para planning e treinamento.
 Os comandos para jogar são os seguintes: direcionais movem a nave, e espaço atira.
+
+<center>
+<video width="320" height="240" controls>
+  <source src="content/demo.mp4" type="video/mp4">
+</video>
+</center>

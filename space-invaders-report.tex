@@ -169,22 +169,28 @@ a melhor rede até agora( no acúmulo de recompensas), salvamos seus pesos
 e os modificamos em direções aleatória usando ruído gaussiano. O
 resultado foi aquém do esperado, talvez devido a complexidade do
 problema e a esparcidade das recompensas, que ocorrem com pouca
-frequência. \#\# Monte Carlo 1-Step Planning Utiliza-se simulação monte
-carlo para se estimar o retorno esperado de cada ação possível no estado
-atual. Rollouts/playouts/partidas aleatórias são simuladas até certo
-passo estipulado. A recompensa acumulada até aquele passo é utilizada
-como estimativa do retorno esperado. Quanto mais simulações melhor, logo
-é importante a velocidade do simulador. O funcionamento é ilustrado na
-figura abaixo:
+frequência.
+
+\section{Monte Carlo 1-Step Planning}\label{monte-carlo-1-step-planning}
+
+Utiliza-se simulação monte carlo para se estimar o retorno esperado de
+cada ação possível no estado atual. Rollouts/playouts/partidas
+aleatórias são simuladas até certo passo estipulado. A recompensa
+acumulada até aquele passo é utilizada como estimativa do retorno
+esperado. Quanto mais simulações melhor, logo é importante a velocidade
+do simulador. O funcionamento é ilustrado na figura abaixo:
 
 \begin{center}\includegraphics[width=0.5\linewidth]{content/imgs/MC} \end{center}
 
 Por causa do enorme número de ações, esse método se torna menos
 eficiente. Melhorias possíveis são a utilização de métodos que
-selecionam subconjuntos de ações disponíveis. \#\# Monte Carlo Tree
-Search O método de melhor resultado, é uma melhoria do MC onde se
-constroi uma árvore de ações na memória. Seu funcionamento se dá pelos 4
-passos ilustrados na figura abaixo:
+selecionam subconjuntos de ações disponíveis.
+
+\section{Monte Carlo Tree Search}\label{monte-carlo-tree-search}
+
+O método de melhor resultado, é uma melhoria do MC onde se constroi uma
+árvore de ações na memória. Seu funcionamento se dá pelos 4 passos
+ilustrados na figura abaixo:
 
 \begin{center}\includegraphics[width=0.5\linewidth]{content/imgs/MCTS} \end{center}
 

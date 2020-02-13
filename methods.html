@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 3 Metodologia | Space Invaders - IA</title>
+  <title>Capítulo 4 Metodologia | Space Invaders - IA</title>
   <meta name="description" content="Relatório para a disciplina de IA em jogos." />
   <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 3 Metodologia | Space Invaders - IA" />
+  <meta property="og:title" content="Capítulo 4 Metodologia | Space Invaders - IA" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 3 Metodologia | Space Invaders - IA" />
+  <meta name="twitter:title" content="Capítulo 4 Metodologia | Space Invaders - IA" />
   
   <meta name="twitter:description" content="Relatório para a disciplina de IA em jogos." />
   
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="desafio.html"/>
+<link rel="prev" href="surrogate-player.html"/>
 <link rel="next" href="app.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -72,17 +72,17 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumo</a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
 <li class="chapter" data-level="2" data-path="desafio.html"><a href="desafio.html"><i class="fa fa-check"></i><b>2</b> Desafio</a></li>
-<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Metodologia</a><ul>
-<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>3.1</b> Neural Network</a></li>
-<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#monte-carlo-1-step-planning"><i class="fa fa-check"></i><b>3.2</b> Monte Carlo 1-Step Planning</a></li>
-<li class="chapter" data-level="3.3" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>3.3</b> Monte Carlo Tree Search</a></li>
-<li class="chapter" data-level="3.4" data-path="methods.html"><a href="methods.html#reinforcement-learning"><i class="fa fa-check"></i><b>3.4</b> Reinforcement Learning</a></li>
+<li class="chapter" data-level="3" data-path="surrogate-player.html"><a href="surrogate-player.html"><i class="fa fa-check"></i><b>3</b> Surrogate Player</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Metodologia</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>4.1</b> Neural Network</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#monte-carlo-1-step-planning"><i class="fa fa-check"></i><b>4.2</b> Monte Carlo 1-Step Planning</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>4.3</b> Monte Carlo Tree Search</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>4</b> Aplicação</a><ul>
-<li class="chapter" data-level="4.1" data-path="app.html"><a href="app.html#instalaçao"><i class="fa fa-check"></i><b>4.1</b> Instalaçao</a></li>
-<li class="chapter" data-level="4.2" data-path="app.html"><a href="app.html#jogo"><i class="fa fa-check"></i><b>4.2</b> Jogo</a></li>
+<li class="chapter" data-level="5" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>5</b> Aplicação</a><ul>
+<li class="chapter" data-level="5.1" data-path="app.html"><a href="app.html#instalaçao"><i class="fa fa-check"></i><b>5.1</b> Instalaçao</a></li>
+<li class="chapter" data-level="5.2" data-path="app.html"><a href="app.html#jogo"><i class="fa fa-check"></i><b>5.2</b> Jogo</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>5</b> Considerações finais</a></li>
+<li class="chapter" data-level="6" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>6</b> Considerações finais</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li>Ivan Pereira</li>
@@ -105,25 +105,24 @@
 
             <section class="normal" id="section-">
 <div id="methods" class="section level1">
-<h1><span class="header-section-number">Capítulo 3</span> Metodologia</h1>
+<h1><span class="header-section-number">Capítulo 4</span> Metodologia</h1>
 <p>Descrevemos aqui os métodos utilizados neste projeto. Importante: a recompensa é +1 pra cada dano recebido pela nave do jogador( do ponto de vista dos oponente, os quais estamos tentanto otimizar) e -1 pra cada dano recebido pela nave oponente. Além disso, +100 é dado de o tiro inimigo matar o oponente, e -100 é recebido se uma nave inimiga morrer.</p>
 <div id="neural-network" class="section level2">
-<h2><span class="header-section-number">3.1</span> Neural Network</h2>
+<h2><span class="header-section-number">4.1</span> Neural Network</h2>
 <p>Uma rede neural de 1 camada escondida foi treinada com busca aleatória no espaço de pesos. O processo é muito simples, com a rede sendo avaliada em um número de partidas com os pesos gerados, e caso ela seja a melhor rede até agora( no acúmulo de recompensas), salvamos seus pesos e os modificamos em direções aleatória usando ruído gaussiano. O resultado foi aquém do esperado, talvez devido a complexidade do problema e a esparcidade das recompensas, que ocorrem com pouca frequência.</p>
 </div>
 <div id="monte-carlo-1-step-planning" class="section level2">
-<h2><span class="header-section-number">3.2</span> Monte Carlo 1-Step Planning</h2>
+<h2><span class="header-section-number">4.2</span> Monte Carlo 1-Step Planning</h2>
 <p>Utiliza-se simulação monte carlo para se estimar o retorno esperado de cada ação possível no estado atual. Rollouts/playouts/partidas aleatórias são simuladas até certo passo estipulado. A recompensa acumulada até aquele passo é utilizada como estimativa do retorno esperado. Quanto mais simulações melhor, logo é importante a velocidade do simulador. O funcionamento é ilustrado na figura abaixo:</p>
 <p><img src="content/imgs/MC.png" width="50%" style="display: block; margin: auto;" /></p>
 <p>Por causa do enorme número de ações, esse método se torna menos eficiente. Melhorias possíveis são a utilização de métodos que selecionam subconjuntos de ações disponíveis.</p>
 </div>
 <div id="monte-carlo-tree-search" class="section level2">
-<h2><span class="header-section-number">3.3</span> Monte Carlo Tree Search</h2>
+<h2><span class="header-section-number">4.3</span> Monte Carlo Tree Search</h2>
 <p>O método de melhor resultado, é uma melhoria do MC onde se constroi uma árvore de ações na memória. Seu funcionamento se dá pelos 4 passos ilustrados na figura abaixo:</p>
 <p><img src="content/imgs/MCTS.png" width="50%" style="display: block; margin: auto;" /></p>
-</div>
-<div id="reinforcement-learning" class="section level2">
-<h2><span class="header-section-number">3.4</span> Reinforcement Learning</h2>
+<p>Selection: O agente percorre a parte da árvore na memória, escolhendo os nós por meio do UCB, umas das técnicas de tomada de decisão do problema de Multi-armed bandit. Expansion: Dentre os nós filhos do ultimo nó da seleção, escolhemos um para colocar na memória. Geralmente a escolha é sequencial. Playout: O jogo continua de modo aleatório até o fim da partida Backpropagation: As recompensas são adicionadas aos nós da memória percorridos nessa iteração.</p>
+<p>A MCTS vai acabar convergindo na arvore de busca MinMax, que encontra a melhor decisão considerando o as melhores decisões que o oponente pode tomar(Equilibrio Nash). Mas é importante frisar que as ações do jogador vem de um surrogate, o que diminui a validade téorica do algoritmo.</p>
 
 </div>
 </div>
@@ -132,7 +131,7 @@
           </div>
         </div>
       </div>
-<a href="desafio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="surrogate-player.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="app.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

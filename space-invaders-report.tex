@@ -157,14 +157,38 @@ computar a política ótima. O segundo problema, mais particular ao jogo,
 é o fato de que o agente controla as naves oponentes, aumentando assim o
 espaço de ações enormemente. Dado que nessa versão do jogo os oponentes
 tem 5 ações possíveis, 4 direções e tiro, e temos 3 oponentes, o número
-de ações possíveis vai ser 5\emph{5}5 = 125 ações. O numero pequeno de
+de ações possíveis vai ser 5\emph{5}5 = 125 ações. O número pequeno de
 oponentes é proposital, pois o espaço de ações cresce muito, tornando
 inviável as técnicas aqui descritas. Versões mais eficientes estão em
 desenvolvimento.
 
-No capítulo \ref{methods} descrevemos as técnicas utilizadas neste
-trabalho, e no capítulo \ref{app} descrevemos a implementação como um
-todo.
+\chapter{Surrogate Player}\label{surrogate-player}
+
+Para que as técnicas de IA sejam viáveis, é necessário a interação com
+um jogador. No entanto, essa é uma questão difícil, já que é custoso o
+tempo disponível de um humano. A solução é então fazermos um modelo do
+jogador humano, um \emph{surrogate}. Com este propósito, as técnicas de
+planning são uma forma de se construir esse surrogate, já que diferente
+de modelos black box, elas são intuitivas e entendíveis, permitindo o
+debug e aprimoramento dos modelos. Nesse projeto foi utilizada a máquina
+de estados finito(FSM) para modelar o comportamento do jogador humano. O
+diagrama abaixo demonstra o funcionamento da FSM:
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{content/imgs/FSM} 
+
+}
+
+\caption{Processo de decisão de markov. [@faria1999explorando]}\label{fig:fsm}
+\end{figure}
+
+Os estados são os seguintes: Roaming,Shooting, Chasing, Fleeing. No
+Roaming, a fsm ficar verificando as condições para mudar de estado. Ele
+vai para shooting caso o oponente esteja em sua mira(checando as
+corrdenadas na vertical). Chasing é se tendo uma quantidade significante
+de vida, a fsm persegue o oponente mais próximo. Fleeing é quando sua
+vida for muito baixa, em comparação ao inimigos.
 
 \chapter{Metodologia}\label{methods}
 
@@ -208,7 +232,18 @@ ilustrados na figura abaixo:
 
 \begin{center}\includegraphics[width=0.5\linewidth]{content/imgs/MCTS} \end{center}
 
-\section{Reinforcement Learning}\label{reinforcement-learning}
+Selection: O agente percorre a parte da árvore na memória, escolhendo os
+nós por meio do UCB, umas das técnicas de tomada de decisão do problema
+de Multi-armed bandit. Expansion: Dentre os nós filhos do ultimo nó da
+seleção, escolhemos um para colocar na memória. Geralmente a escolha é
+sequencial. Playout: O jogo continua de modo aleatório até o fim da
+partida Backpropagation: As recompensas são adicionadas aos nós da
+memória percorridos nessa iteração.
+
+A MCTS vai acabar convergindo na arvore de busca MinMax, que encontra a
+melhor decisão considerando o as melhores decisões que o oponente pode
+tomar(Equilibrio Nash). Mas é importante frisar que as ações do jogador
+vem de um surrogate, o que diminui a validade téorica do algoritmo.
 
 \chapter{Aplicação}\label{app}
 
@@ -251,7 +286,17 @@ MCTS
 
 \chapter{Considerações finais}\label{considerauxe7uxf5es-finais}
 
-We have finished a nice book.
+Esse projeto é ainda um protótipo de um projeto maior: Permitir que o
+designer do jogo possa testar, de maneira rápida e eficiente, diferentes
+políticas e comportamentos dos oponentes do jogador humano. Neste
+trabalho foi desenvolvido um surrogate do jogador humano com planning, e
+acreditamos ser uma forma eficiente de tratar esse problema, por ser
+entendivel, intuitivel, e mais importante, verificável, até para
+melhorias. As técnicas para controle dos oponentes são básicas ainda,
+mas já estão sendo exploradas algumas mais avançadas, como versões de
+algoritmos genéticos que buscam no espaço de comportamentos(RHEA e Map
+of Elits). O propósito final deste trabalho é a publicação de um paper
+descrevendo os avanços alcançados.
 
 \bibliography{references.bib,packages.bib}
 

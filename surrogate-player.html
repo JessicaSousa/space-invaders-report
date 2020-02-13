@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 3 Surrogate Player | Space Invaders - IA</title>
+  <meta name="description" content="Relatório para a disciplina de IA em jogos." />
+  <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 3 Surrogate Player | Space Invaders - IA" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Relatório para a disciplina de IA em jogos." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 3 Surrogate Player | Space Invaders - IA" />
+  
+  <meta name="twitter:description" content="Relatório para a disciplina de IA em jogos." />
+  
+
+<meta name="author" content="Ivan de Jesus Pereira Pinto" />
+
+
+<meta name="date" content="2020-02-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="desafio.html"/>
+<link rel="next" href="methods.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Space Invaders - AI</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumo</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
+<li class="chapter" data-level="2" data-path="desafio.html"><a href="desafio.html"><i class="fa fa-check"></i><b>2</b> Desafio</a></li>
+<li class="chapter" data-level="3" data-path="surrogate-player.html"><a href="surrogate-player.html"><i class="fa fa-check"></i><b>3</b> Surrogate Player</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Metodologia</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>4.1</b> Neural Network</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#monte-carlo-1-step-planning"><i class="fa fa-check"></i><b>4.2</b> Monte Carlo 1-Step Planning</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>4.3</b> Monte Carlo Tree Search</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>5</b> Aplicação</a><ul>
+<li class="chapter" data-level="5.1" data-path="app.html"><a href="app.html#instalaçao"><i class="fa fa-check"></i><b>5.1</b> Instalaçao</a></li>
+<li class="chapter" data-level="5.2" data-path="app.html"><a href="app.html#jogo"><i class="fa fa-check"></i><b>5.2</b> Jogo</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>6</b> Considerações finais</a></li>
+<li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
+<li class="divider"></li>
+<li>Ivan Pereira</li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Space Invaders - IA</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="surrogate-player" class="section level1">
+<h1><span class="header-section-number">Capítulo 3</span> Surrogate Player</h1>
+<p>Para que as técnicas de IA sejam viáveis, é necessário a interação com um jogador. No entanto, essa é uma questão difícil, já que é custoso o tempo disponível de um humano. A solução é então fazermos um modelo do jogador humano, um <em>surrogate</em>. Com este propósito, as técnicas de planning são uma forma de se construir esse surrogate, já que diferente de modelos black box, elas são intuitivas e entendíveis, permitindo o debug e aprimoramento dos modelos. Nesse projeto foi utilizada a máquina de estados finito(FSM) para modelar o comportamento do jogador humano. O diagrama abaixo demonstra o funcionamento da FSM:</p>
+<div class="figure" style="text-align: center"><span id="fig:fsm"></span>
+<img src="content/imgs/FSM.png" alt="Processo de decisão de markov. [@faria1999explorando]" width="50%" />
+<p class="caption">
+Figura 3.1: Processo de decisão de markov. <span class="citation">(Faria and Romero <a href="#ref-faria1999explorando">1999</a>)</span>
+</p>
+</div>
+<p>Os estados são os seguintes: Roaming,Shooting, Chasing, Fleeing. No Roaming, a fsm ficar verificando as condições para mudar de estado. Ele vai para shooting caso o oponente esteja em sua mira(checando as corrdenadas na vertical). Chasing é se tendo uma quantidade significante de vida, a fsm persegue o oponente mais próximo. Fleeing é quando sua vida for muito baixa, em comparação ao inimigos.</p>
+
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-faria1999explorando">
+<p>Faria, Gedson, and Roseli Francelin Romero. 1999. “Explorando O Potencial de Algoritmos de Aprendizado Com Reforço Em Robôs Móveis.” In <em>Proceedings of the Iv Brazilian Conference on Neural Networks</em>, 237–42.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="desafio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["space-invaders-report.pdf", "space-invaders-report.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

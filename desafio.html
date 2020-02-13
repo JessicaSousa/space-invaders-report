@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="intro.html"/>
-<link rel="next" href="methods.html"/>
+<link rel="next" href="surrogate-player.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -72,17 +72,17 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumo</a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
 <li class="chapter" data-level="2" data-path="desafio.html"><a href="desafio.html"><i class="fa fa-check"></i><b>2</b> Desafio</a></li>
-<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Metodologia</a><ul>
-<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>3.1</b> Neural Network</a></li>
-<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#monte-carlo-1-step-planning"><i class="fa fa-check"></i><b>3.2</b> Monte Carlo 1-Step Planning</a></li>
-<li class="chapter" data-level="3.3" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>3.3</b> Monte Carlo Tree Search</a></li>
-<li class="chapter" data-level="3.4" data-path="methods.html"><a href="methods.html#reinforcement-learning"><i class="fa fa-check"></i><b>3.4</b> Reinforcement Learning</a></li>
+<li class="chapter" data-level="3" data-path="surrogate-player.html"><a href="surrogate-player.html"><i class="fa fa-check"></i><b>3</b> Surrogate Player</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Metodologia</a><ul>
+<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>4.1</b> Neural Network</a></li>
+<li class="chapter" data-level="4.2" data-path="methods.html"><a href="methods.html#monte-carlo-1-step-planning"><i class="fa fa-check"></i><b>4.2</b> Monte Carlo 1-Step Planning</a></li>
+<li class="chapter" data-level="4.3" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>4.3</b> Monte Carlo Tree Search</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>4</b> Aplicação</a><ul>
-<li class="chapter" data-level="4.1" data-path="app.html"><a href="app.html#instalaçao"><i class="fa fa-check"></i><b>4.1</b> Instalaçao</a></li>
-<li class="chapter" data-level="4.2" data-path="app.html"><a href="app.html#jogo"><i class="fa fa-check"></i><b>4.2</b> Jogo</a></li>
+<li class="chapter" data-level="5" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>5</b> Aplicação</a><ul>
+<li class="chapter" data-level="5.1" data-path="app.html"><a href="app.html#instalaçao"><i class="fa fa-check"></i><b>5.1</b> Instalaçao</a></li>
+<li class="chapter" data-level="5.2" data-path="app.html"><a href="app.html#jogo"><i class="fa fa-check"></i><b>5.2</b> Jogo</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>5</b> Considerações finais</a></li>
+<li class="chapter" data-level="6" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>6</b> Considerações finais</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li>Ivan Pereira</li>
@@ -106,9 +106,7 @@
             <section class="normal" id="section-">
 <div id="desafio" class="section level1">
 <h1><span class="header-section-number">Capítulo 2</span> Desafio</h1>
-<p>O jogo de Space Invaders tem 2 principais desafios: o primeiro é, como vários jogos similares, o número enorme de estados possível, tornando inviável a utilização de métodos exatos ou programação dinâmica para computar a política ótima. O segundo problema, mais particular ao jogo, é o fato de que o agente controla as naves oponentes, aumentando assim o espaço de ações enormemente. Dado que nessa versão do jogo os oponentes tem 5 ações possíveis, 4 direções e tiro, e temos 3 oponentes, o número de ações possíveis vai ser 5<em>5</em>5 = 125 ações. O numero pequeno de oponentes é proposital, pois o espaço de ações cresce muito, tornando inviável as técnicas aqui descritas. Versões mais eficientes estão em desenvolvimento.</p>
-<p>No capítulo <a href="methods.html#methods">3</a> descrevemos as técnicas utilizadas neste trabalho, e no capítulo <a href="app.html#app">4</a> descrevemos a implementação como um todo.</p>
-
+<p>O jogo de Space Invaders tem 2 principais desafios: o primeiro é, como vários jogos similares, o número enorme de estados possível, tornando inviável a utilização de métodos exatos ou programação dinâmica para computar a política ótima. O segundo problema, mais particular ao jogo, é o fato de que o agente controla as naves oponentes, aumentando assim o espaço de ações enormemente. Dado que nessa versão do jogo os oponentes tem 5 ações possíveis, 4 direções e tiro, e temos 3 oponentes, o número de ações possíveis vai ser 5<em>5</em>5 = 125 ações. O número pequeno de oponentes é proposital, pois o espaço de ações cresce muito, tornando inviável as técnicas aqui descritas. Versões mais eficientes estão em desenvolvimento.</p>
 </div>
             </section>
 
@@ -116,7 +114,7 @@
         </div>
       </div>
 <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="surrogate-player.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

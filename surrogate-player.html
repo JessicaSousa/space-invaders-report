@@ -108,19 +108,13 @@
 <h1><span class="header-section-number">Capítulo 3</span> Surrogate Player</h1>
 <p>Para que as técnicas de IA sejam viáveis, é necessário a interação com um jogador. No entanto, essa é uma questão difícil, já que é custoso o tempo disponível de um humano. A solução é então fazermos um modelo do jogador humano, um <em>surrogate</em>. Com este propósito, as técnicas de planning são uma forma de se construir esse surrogate, já que diferente de modelos black box, elas são intuitivas e entendíveis, permitindo o debug e aprimoramento dos modelos. Nesse projeto foi utilizada a máquina de estados finito(FSM) para modelar o comportamento do jogador humano. O diagrama abaixo demonstra o funcionamento da FSM:</p>
 <div class="figure" style="text-align: center"><span id="fig:fsm"></span>
-<img src="content/imgs/FSM.png" alt="Processo de decisão de markov. [@faria1999explorando]" width="50%" />
+<img src="content/imgs/FSM.png" alt="Diagrama FSM" width="50%" />
 <p class="caption">
-Figura 3.1: Processo de decisão de markov. <span class="citation">(Faria and Romero <a href="#ref-faria1999explorando">1999</a>)</span>
+Figura 3.1: Diagrama FSM
 </p>
 </div>
 <p>Os estados são os seguintes: Roaming,Shooting, Chasing, Fleeing. No Roaming, a fsm ficar verificando as condições para mudar de estado. Ele vai para shooting caso o oponente esteja em sua mira(checando as corrdenadas na vertical). Chasing é se tendo uma quantidade significante de vida, a fsm persegue o oponente mais próximo. Fleeing é quando sua vida for muito baixa, em comparação ao inimigos.</p>
 
-</div>
-<h3>Referências</h3>
-<div id="refs" class="references">
-<div id="ref-faria1999explorando">
-<p>Faria, Gedson, and Roseli Francelin Romero. 1999. “Explorando O Potencial de Algoritmos de Aprendizado Com Reforço Em Robôs Móveis.” In <em>Proceedings of the Iv Brazilian Conference on Neural Networks</em>, 237–42.</p>
-</div>
 </div>
             </section>
 

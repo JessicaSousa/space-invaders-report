@@ -123,9 +123,9 @@
 <p><img src="content/imgs/MCTS.png" width="50%" style="display: block; margin: auto;" /></p>
 <p>Selection: O agente percorre a parte da árvore na memória, escolhendo os nós por meio do UCB, umas das técnicas de tomada de decisão do problema de Multi-armed bandit.</p>
 <p>Expansion: Dentre os nós filhos do ultimo nó da seleção, escolhemos um para colocar na memória. Geralmente a escolha é sequencial.</p>
-<p>Playout: O jogo continua de modo aleatório até o fim da partida.</p>
+<p>Playout: O jogo continua no modo aleatório até o fim da partida.</p>
 <p>Backpropagation: As recompensas são adicionadas aos nós da memória percorridos nessa iteração.</p>
-<p>A MCTS vai acabar convergindo na arvore de busca MinMax, que encontra a melhor decisão considerando o as melhores decisões que o oponente pode tomar(Equilíbrio Nash). No entanto, é importante frisar que as ações do jogador vem de um surrogate, o que diminui a validade téorica do algoritmo.</p>
+<p>A MCTS vai acabar convergindo na árvore de busca MinMax, que encontra a melhor decisão considerando o as melhores decisões que o oponente pode tomar(Equilíbrio Nash). No entanto, é importante frisar que as ações do jogador vem de um surrogate, o que diminui a validade téorica do algoritmo.</p>
 
 </div>
 </div>

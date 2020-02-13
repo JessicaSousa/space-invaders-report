@@ -5,8 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Space Invaders - AI</a></li>
       after: |
-        <li><a href="https://github.com/abcp4" target="blank">Github: Ivan Pereira</a></li>
-    edit: https://github.com/JessicaSousa/space-invaders-report/edit/master/%s
+        <li>Ivan Pereira</li>
     download: ["pdf", "epub"]
 bookdown::pdf_book:
   includes:

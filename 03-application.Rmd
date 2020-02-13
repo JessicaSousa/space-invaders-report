@@ -1,7 +1,6 @@
-# Resultados e discussão
+# Aplicação {#app}
 
 Some _significant_ applications are demonstrated in this chapter.
 
-## Example one
+## Instalaçao
 
-## Example two

@@ -1,6 +1,10 @@
 # Introdução {#intro}
-Esse projeto visa o desenvolvimento de técnicas da área de Inteligência Artificial para o jogo de Space Invaders. Especificamente almeja-se a implementação de IAs para as naves inimigas. A maior parte da pesquisa nessa área se dá no desenvolvimento de Agentes que aprendem a jogar contra o ambiente, no estilo de um processo de decisão de Markov abaixo:
+Esse projeto visa o desenvolvimento de técnicas da área de Inteligência Artificial para o jogo de Space Invaders. Especificamente almeja-se a implementação de IAs para as naves inimigas. A maior parte da pesquisa nessa área se dá no desenvolvimento de Agentes que aprendem a jogar contra o ambiente, no estilo de um processo de decisão de Markov conforme ilustramos na Figura \@ref(fig:pdm):
 
+
+```{r pdm, fig.align="center", echo=FALSE,  out.width = '50%', fig.cap = "Processo de decisão de markov. [@faria1999explorando]"}
+knitr::include_graphics('content/imgs/agente-ambiente.png')
+```
 
 O SpaceInvaders aqui desenvolvido almeja no entanto politicas de controle para o ambiente, que seriam os inimigos. O jogador(humano) se torna o ambiente nesse caso. Para que fosse possível a implementação das técnicas de IA, foi necessário o desenvolvimento do jogo, de um simulador, e de um surrogate para o jogador. 
 Os objetivos deste trabalho são listados a seguir:
@@ -9,3 +13,6 @@ Os objetivos deste trabalho são listados a seguir:
 2. Construção de um Forward Simulator
 3. Desenvolvimento de um surrugate Player que substitua o humano em tempo de planning ou treino.
 4. Implementação de Técnicas de IA (Planning e Aprendizado)
+
+
+No capítulo \@ref(methods) descrevemos as técnicas utilizadas neste trabalho...

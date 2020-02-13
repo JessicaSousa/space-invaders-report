@@ -78,6 +78,7 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>3</b> Aplicação</a><ul>
 <li class="chapter" data-level="3.1" data-path="app.html"><a href="app.html#instalaçao"><i class="fa fa-check"></i><b>3.1</b> Instalaçao</a></li>
+<li class="chapter" data-level="3.2" data-path="app.html"><a href="app.html#jogo"><i class="fa fa-check"></i><b>3.2</b> Jogo</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>4</b> Considerações finais</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
@@ -111,6 +112,10 @@ Criar ambiente: conda create -n py36_32 python=3.6 Ativar ambiente: conda activa
 <p>As depedências do python devem ter sido satisfeitas. O programa com UI vai precisar chamar o jogo SpaceInvaders em C, para que possa funcionar. Temos que compilar o código em C com o comando a seguir, da pasta SpaceInvaders</p>
 <p>gcc -Wall -fPIC -shared src/Space.c src/list.c src/genann.c -o src/Space.so</p>
 <p>Se tudo tiver dado certo, o jogo deve funcionar. Basta utilizar python menu.py</p>
+</div>
+<div id="jogo" class="section level2">
+<h2><span class="header-section-number">3.2</span> Jogo</h2>
+<p>O Jogo Space invader foi desenvolvido em C de modo a ser o mais eficiente possível. Além disso, foram utilizadas estruturas de dados com menor complexidade, como por exemplo: 1. o uso de Matriz para representar o espaço do jogo, tendo O(1) para checar se a nave do jogador ou dos oponentes receberam dados dos tiros. 2. O(n) para mover os tiros, onde n é a quantidade de tiros ativos na tela, armazenados em uma lista. Tiros fora da tela são descartados Um foward simulator foi implementado para permitir que os agentes possam fazer simulações, para planning e treinamento. Os comandos para jogar são os seguintes: direcionais movem a nave, e espaço atira.</p>
 
 </div>
 </div>

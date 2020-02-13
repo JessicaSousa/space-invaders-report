@@ -106,6 +106,11 @@
 <p>Some <em>significant</em> applications are demonstrated in this chapter.</p>
 <div id="instalaçao" class="section level2">
 <h2><span class="header-section-number">3.1</span> Instalaçao</h2>
+<p>Para instalar no Windows é necessário um compilador de c(gcc foi utilizado no desenvolvimento), e de python 3.6 de 32 bits. Utilizando o anaconda basta criar um ambiente como se segue: Colocar variável de ambiente: set CONDA_FORCE_32BIT=1<br />
+Criar ambiente: conda create -n py36_32 python=3.6 Ativar ambiente: conda activate py36_32 Instalar numpy e pygame: pip install numpy,pygame</p>
+<p>As depedências do python devem ter sido satisfeitas. O programa com UI vai precisar chamar o jogo SpaceInvaders em C, para que possa funcionar. Temos que compilar o código em C com o comando a seguir, da pasta SpaceInvaders</p>
+<p>gcc -Wall -fPIC -shared src/Space.c src/list.c src/genann.c -o src/Space.so</p>
+<p>Se tudo tiver dado certo, o jogo deve funcionar. Basta utilizar python menu.py</p>
 
 </div>
 </div>

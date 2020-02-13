@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 3 Aplicação | Space Invaders - IA</title>
+  <title>Capítulo 4 Aplicação | Space Invaders - IA</title>
   <meta name="description" content="Relatório para a disciplina de IA em jogos." />
   <meta name="generator" content="bookdown 0.17.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 3 Aplicação | Space Invaders - IA" />
+  <meta property="og:title" content="Capítulo 4 Aplicação | Space Invaders - IA" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 3 Aplicação | Space Invaders - IA" />
+  <meta name="twitter:title" content="Capítulo 4 Aplicação | Space Invaders - IA" />
   
   <meta name="twitter:description" content="Relatório para a disciplina de IA em jogos." />
   
@@ -71,17 +71,18 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumo</a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
-<li class="chapter" data-level="2" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>2</b> Metodologia</a><ul>
-<li class="chapter" data-level="2.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>2.1</b> Neural Network</a></li>
-<li class="chapter" data-level="2.2" data-path="methods.html"><a href="methods.html#monte-carlo-1-step-planning"><i class="fa fa-check"></i><b>2.2</b> Monte Carlo 1-Step Planning</a></li>
-<li class="chapter" data-level="2.3" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>2.3</b> Monte Carlo Tree Search</a></li>
-<li class="chapter" data-level="2.4" data-path="methods.html"><a href="methods.html#reinforcement-learning"><i class="fa fa-check"></i><b>2.4</b> Reinforcement Learning</a></li>
+<li class="chapter" data-level="2" data-path="desafio.html"><a href="desafio.html"><i class="fa fa-check"></i><b>2</b> Desafio</a></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Metodologia</a><ul>
+<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>3.1</b> Neural Network</a></li>
+<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#monte-carlo-1-step-planning"><i class="fa fa-check"></i><b>3.2</b> Monte Carlo 1-Step Planning</a></li>
+<li class="chapter" data-level="3.3" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>3.3</b> Monte Carlo Tree Search</a></li>
+<li class="chapter" data-level="3.4" data-path="methods.html"><a href="methods.html#reinforcement-learning"><i class="fa fa-check"></i><b>3.4</b> Reinforcement Learning</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>3</b> Aplicação</a><ul>
-<li class="chapter" data-level="3.1" data-path="app.html"><a href="app.html#instalaçao"><i class="fa fa-check"></i><b>3.1</b> Instalaçao</a></li>
-<li class="chapter" data-level="3.2" data-path="app.html"><a href="app.html#jogo"><i class="fa fa-check"></i><b>3.2</b> Jogo</a></li>
+<li class="chapter" data-level="4" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>4</b> Aplicação</a><ul>
+<li class="chapter" data-level="4.1" data-path="app.html"><a href="app.html#instalaçao"><i class="fa fa-check"></i><b>4.1</b> Instalaçao</a></li>
+<li class="chapter" data-level="4.2" data-path="app.html"><a href="app.html#jogo"><i class="fa fa-check"></i><b>4.2</b> Jogo</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>4</b> Considerações finais</a></li>
+<li class="chapter" data-level="5" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>5</b> Considerações finais</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
 <li>Ivan Pereira</li>
@@ -104,9 +105,9 @@
 
             <section class="normal" id="section-">
 <div id="app" class="section level1">
-<h1><span class="header-section-number">Capítulo 3</span> Aplicação</h1>
+<h1><span class="header-section-number">Capítulo 4</span> Aplicação</h1>
 <div id="instalaçao" class="section level2">
-<h2><span class="header-section-number">3.1</span> Instalaçao</h2>
+<h2><span class="header-section-number">4.1</span> Instalaçao</h2>
 <p>Para instalar no Windows é necessário um compilador de c(gcc foi utilizado no desenvolvimento), e de python 3.6 de 32 bits. Utilizando o anaconda basta criar um ambiente como se segue: Colocar variável de ambiente: set CONDA_FORCE_32BIT=1<br />
 Criar ambiente: conda create -n py36_32 python=3.6 Ativar ambiente: conda activate py36_32 Instalar numpy e pygame: pip install numpy,pygame</p>
 <p>As depedências do python devem ter sido satisfeitas. O programa com UI vai precisar chamar o jogo SpaceInvaders em C, para que possa funcionar. Temos que compilar o código em C com o comando a seguir, da pasta SpaceInvaders</p>
@@ -114,7 +115,7 @@ Criar ambiente: conda create -n py36_32 python=3.6 Ativar ambiente: conda activa
 <p>Se tudo tiver dado certo, o jogo deve funcionar. Basta utilizar python menu.py</p>
 </div>
 <div id="jogo" class="section level2">
-<h2><span class="header-section-number">3.2</span> Jogo</h2>
+<h2><span class="header-section-number">4.2</span> Jogo</h2>
 <p>O Jogo Space invader foi desenvolvido em C de modo a ser o mais eficiente possível. Além disso, foram utilizadas estruturas de dados com menor complexidade, como por exemplo: 1. o uso de Matriz para representar o espaço do jogo, tendo O(1) para checar se a nave do jogador ou dos oponentes receberam dados dos tiros. 2. O(n) para mover os tiros, onde n é a quantidade de tiros ativos na tela, armazenados em uma lista. Tiros fora da tela são descartados Um foward simulator foi implementado para permitir que os agentes possam fazer simulações, para planning e treinamento. Os comandos para jogar são os seguintes: direcionais movem a nave, e espaço atira.</p>
 O Vídeo abaixo demonstra uma partida rapida de um humano contra a IA MCTS
 <center>

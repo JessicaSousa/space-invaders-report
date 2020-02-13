@@ -148,6 +148,20 @@ são listados a seguir:
   Implementação de Técnicas de IA (Planning e Aprendizado)
 \end{enumerate}
 
+\chapter{Desafio}\label{desafio}
+
+O jogo de Space Invaders tem 2 principais desafios: o primeiro é, como
+vários jogos similares, o número enorme de estados possível, tornando
+inviável a utilização de métodos exatos ou programação dinâmica para
+computar a política ótima. O segundo problema, mais particular ao jogo,
+é o fato de que o agente controla as naves oponentes, aumentando assim o
+espaço de ações enormemente. Dado que nessa versão do jogo os oponentes
+tem 5 ações possíveis, 4 direções e tiro, e temos 3 oponentes, o número
+de ações possíveis vai ser 5\emph{5}5 = 125 ações. O numero pequeno de
+oponentes é proposital, pois o espaço de ações cresce muito, tornando
+inviável as técnicas aqui descritas. Versões mais eficientes estão em
+desenvolvimento.
+
 No capítulo \ref{methods} descrevemos as técnicas utilizadas neste
 trabalho, e no capítulo \ref{app} descrevemos a implementação como um
 todo.

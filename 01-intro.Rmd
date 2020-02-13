@@ -16,6 +16,16 @@ Os objetivos deste trabalho são listados a seguir:
 
 # Desafio 
 
-O jogo de Space Invaders tem 2 principais desafios: o primeiro é, como vários jogos similares, o número enorme de estados possível, tornando inviável a utilização de métodos exatos ou programação dinâmica para computar a política ótima. O segundo problema, mais particular ao jogo, é o fato de que o agente controla as naves oponentes, aumentando assim o espaço de ações enormemente. Dado que nessa versão do jogo os oponentes tem 5 ações possíveis, 4 direções e tiro, e temos 3 oponentes, o número de ações possíveis vai ser 5*5*5 = 125 ações. O numero pequeno de oponentes é proposital, pois o espaço de ações cresce muito, tornando inviável as técnicas aqui descritas. Versões mais eficientes estão em desenvolvimento.
+O jogo de Space Invaders tem 2 principais desafios: o primeiro é, como vários jogos similares, o número enorme de estados possível, tornando inviável a utilização de métodos exatos ou programação dinâmica para computar a política ótima. O segundo problema, mais particular ao jogo, é o fato de que o agente controla as naves oponentes, aumentando assim o espaço de ações enormemente. Dado que nessa versão do jogo os oponentes tem 5 ações possíveis, 4 direções e tiro, e temos 3 oponentes, o número de ações possíveis vai ser 5*5*5 = 125 ações. O número pequeno de oponentes é proposital, pois o espaço de ações cresce muito, tornando inviável as técnicas aqui descritas. Versões mais eficientes estão em desenvolvimento.
 
-No capítulo \@ref(methods) descrevemos as técnicas utilizadas neste trabalho, e no capítulo \@ref(app) descrevemos a implementação como um todo.
+# Surrogate Player
+Para que as técnicas de IA sejam viáveis, é necessário a interação com um jogador. No entanto, essa é uma questão difícil, já que é custoso o tempo disponível de um humano. A solução é então fazermos um modelo do jogador humano, um *surrogate*. 
+Com este propósito, as técnicas de planning são uma forma de se construir esse surrogate, já que diferente de modelos black box, elas são intuitivas e entendíveis, permitindo o debug e aprimoramento dos modelos.
+Nesse projeto foi utilizada a máquina de estados finito(FSM) para modelar o comportamento do jogador humano. O diagrama abaixo demonstra o funcionamento da FSM:
+
+```{r pdm, fig.align="center", echo=FALSE,  out.width = '50%', fig.cap = "Processo de decisão de markov. [@faria1999explorando]"}
+knitr::include_graphics('content/imgs/fsm.png')
+```
+
+Os estados são os seguintes: Roaming,Shooting, Chasing, Fleeing. 
+No Roaming, a fsm ficar verificando as condições para mudar de estado. Ele vai para shooting caso o oponente esteja em sua mira(checando as corrdenadas na vertical). Chasing é se tendo uma quantidade significante de vida, a fsm persegue o oponente mais próximo. Fleeing é quando sua vida for muito baixa, em comparação ao inimigos. 

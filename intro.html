@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="trabalhos-relacionados.html"/>
+<link rel="next" href="methods.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -71,20 +71,18 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumo</a></li>
 <li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introdução</a></li>
-<li class="chapter" data-level="2" data-path="trabalhos-relacionados.html"><a href="trabalhos-relacionados.html"><i class="fa fa-check"></i><b>2</b> Trabalhos relacionados</a></li>
-<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Metodologia</a><ul>
-<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>3.1</b> Neural Network</a></li>
-<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>3.2</b> Monte Carlo Tree Search</a></li>
-<li class="chapter" data-level="3.3" data-path="methods.html"><a href="methods.html#reinforcement-learning"><i class="fa fa-check"></i><b>3.3</b> Reinforcement Learning</a></li>
+<li class="chapter" data-level="2" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>2</b> Metodologia</a><ul>
+<li class="chapter" data-level="2.1" data-path="methods.html"><a href="methods.html#neural-network"><i class="fa fa-check"></i><b>2.1</b> Neural Network</a></li>
+<li class="chapter" data-level="2.2" data-path="methods.html"><a href="methods.html#monte-carlo-tree-search"><i class="fa fa-check"></i><b>2.2</b> Monte Carlo Tree Search</a></li>
+<li class="chapter" data-level="2.3" data-path="methods.html"><a href="methods.html#reinforcement-learning"><i class="fa fa-check"></i><b>2.3</b> Reinforcement Learning</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="resultados-e-discussão.html"><a href="resultados-e-discussão.html"><i class="fa fa-check"></i><b>4</b> Resultados e discussão</a><ul>
-<li class="chapter" data-level="4.1" data-path="resultados-e-discussão.html"><a href="resultados-e-discussão.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
-<li class="chapter" data-level="4.2" data-path="resultados-e-discussão.html"><a href="resultados-e-discussão.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+<li class="chapter" data-level="3" data-path="app.html"><a href="app.html"><i class="fa fa-check"></i><b>3</b> Aplicação</a><ul>
+<li class="chapter" data-level="3.1" data-path="app.html"><a href="app.html#instalaçao"><i class="fa fa-check"></i><b>3.1</b> Instalaçao</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="conclusões-e-trabalhos-futuros.html"><a href="conclusões-e-trabalhos-futuros.html"><i class="fa fa-check"></i><b>5</b> Conclusões e trabalhos futuros</a></li>
+<li class="chapter" data-level="4" data-path="considerações-finais.html"><a href="considerações-finais.html"><i class="fa fa-check"></i><b>4</b> Considerações finais</a></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/abcp4" target="blank">Github: Ivan Pereira</a></li>
+<li>Ivan Pereira</li>
 
 </ul>
 
@@ -105,7 +103,13 @@
             <section class="normal" id="section-">
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Capítulo 1</span> Introdução</h1>
-<p>Esse projeto visa o desenvolvimento de técnicas da área de Inteligência Artificial para o jogo de Space Invaders. Especificamente almeja-se a implementação de IAs para as naves inimigas. A maior parte da pesquisa nessa área se dá no desenvolvimento de Agentes que aprendem a jogar contra o ambiente, no estilo de um processo de decisão de Markov abaixo:</p>
+<p>Esse projeto visa o desenvolvimento de técnicas da área de Inteligência Artificial para o jogo de Space Invaders. Especificamente almeja-se a implementação de IAs para as naves inimigas. A maior parte da pesquisa nessa área se dá no desenvolvimento de Agentes que aprendem a jogar contra o ambiente, no estilo de um processo de decisão de Markov conforme ilustramos na Figura <a href="intro.html#fig:pdm">1.1</a>:</p>
+<div class="figure" style="text-align: center"><span id="fig:pdm"></span>
+<img src="content/imgs/agente-ambiente.png" alt="Processo de decisão de markov. [@faria1999explorando]" width="50%" />
+<p class="caption">
+Figura 1.1: Processo de decisão de markov. <span class="citation">(Faria and Romero <a href="#ref-faria1999explorando">1999</a>)</span>
+</p>
+</div>
 <p>O SpaceInvaders aqui desenvolvido almeja no entanto politicas de controle para o ambiente, que seriam os inimigos. O jogador(humano) se torna o ambiente nesse caso. Para que fosse possível a implementação das técnicas de IA, foi necessário o desenvolvimento do jogo, de um simulador, e de um surrogate para o jogador. Os objetivos deste trabalho são listados a seguir:</p>
 <ol style="list-style-type: decimal">
 <li>Construção do jogo de Space Invaders eficiente em C.</li>
@@ -113,7 +117,14 @@
 <li>Desenvolvimento de um surrugate Player que substitua o humano em tempo de planning ou treino.</li>
 <li>Implementação de Técnicas de IA (Planning e Aprendizado)</li>
 </ol>
+<p>No capítulo <a href="methods.html#methods">2</a> descrevemos as técnicas utilizadas neste trabalho…</p>
 
+</div>
+<h3>Referências</h3>
+<div id="refs" class="references">
+<div id="ref-faria1999explorando">
+<p>Faria, Gedson, and Roseli Francelin Romero. 1999. “Explorando O Potencial de Algoritmos de Aprendizado Com Reforço Em Robôs Móveis.” In <em>Proceedings of the Iv Brazilian Conference on Neural Networks</em>, 237–42.</p>
+</div>
 </div>
             </section>
 
@@ -121,7 +132,7 @@
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="trabalhos-relacionados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -152,8 +163,8 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/JessicaSousa/space-invaders-report/edit/master/01-intro.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,

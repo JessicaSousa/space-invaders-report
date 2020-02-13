@@ -234,11 +234,15 @@ funcionamento se dá pelos 4 passos ilustrados na figura abaixo:
 
 Selection: O agente percorre a parte da árvore na memória, escolhendo os
 nós por meio do UCB, umas das técnicas de tomada de decisão do problema
-de Multi-armed bandit. Expansion: Dentre os nós filhos do ultimo nó da
-seleção, escolhemos um para colocar na memória. Geralmente a escolha é
-sequencial. Playout: O jogo continua de modo aleatório até o fim da
-partida Backpropagation: As recompensas são adicionadas aos nós da
-memória percorridos nessa iteração.
+de Multi-armed bandit.
+
+Expansion: Dentre os nós filhos do ultimo nó da seleção, escolhemos um
+para colocar na memória. Geralmente a escolha é sequencial.
+
+Playout: O jogo continua de modo aleatório até o fim da partida.
+
+Backpropagation: As recompensas são adicionadas aos nós da memória
+percorridos nessa iteração.
 
 A MCTS vai acabar convergindo na arvore de busca MinMax, que encontra a
 melhor decisão considerando o as melhores decisões que o oponente pode

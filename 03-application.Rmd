@@ -1,7 +1,5 @@
 # Aplicação {#app}
 
-Some _significant_ applications are demonstrated in this chapter.
-
 ## Instalaçao
 
 Para instalar no Windows é necessário um compilador de c(gcc foi utilizado no desenvolvimento), e de python 3.6 de 32 bits. Utilizando o anaconda basta criar um ambiente como se segue:

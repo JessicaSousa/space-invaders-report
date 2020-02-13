@@ -24,7 +24,7 @@ Com este propósito, as técnicas de planning são uma forma de se construir ess
 Nesse projeto foi utilizada a máquina de estados finito(FSM) para modelar o comportamento do jogador humano. O diagrama abaixo demonstra o funcionamento da FSM:
 
 ```{r pdm, fig.align="center", echo=FALSE,  out.width = '50%', fig.cap = "Processo de decisão de markov. [@faria1999explorando]"}
-knitr::include_graphics('content/imgs/fsm.png')
+knitr::include_graphics('content/imgs/FSM.png')
 ```
 
 Os estados são os seguintes: Roaming,Shooting, Chasing, Fleeing. 

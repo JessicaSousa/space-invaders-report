@@ -226,9 +226,9 @@ selecionam subconjuntos de ações disponíveis.
 
 \section{Monte Carlo Tree Search}\label{monte-carlo-tree-search}
 
-O método de melhor resultado, é uma melhoria do MC onde se constroi uma
-árvore de ações na memória. Seu funcionamento se dá pelos 4 passos
-ilustrados na figura abaixo:
+O MCTS \citep{browne2012survey} é o método de melhor resultado, é uma
+melhoria do MC onde se constroi uma árvore de ações na memória. Seu
+funcionamento se dá pelos 4 passos ilustrados na figura abaixo:
 
 \begin{center}\includegraphics[width=0.5\linewidth]{content/imgs/MCTS} \end{center}
 
@@ -242,8 +242,9 @@ memória percorridos nessa iteração.
 
 A MCTS vai acabar convergindo na arvore de busca MinMax, que encontra a
 melhor decisão considerando o as melhores decisões que o oponente pode
-tomar(Equilibrio Nash). Mas é importante frisar que as ações do jogador
-vem de um surrogate, o que diminui a validade téorica do algoritmo.
+tomar(Equilíbrio Nash). No entanto, é importante frisar que as ações do
+jogador vem de um surrogate, o que diminui a validade téorica do
+algoritmo.
 
 \chapter{Aplicação}\label{app}
 
